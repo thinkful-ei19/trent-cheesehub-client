@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import CheeseList from './components/cheese-list';
 
 class App extends Component {
   render() {
+    const cheeses = [
+      "Bath Blue",
+      "Barkham Blue",
+      "Buxton Blue"
+  ];
     return (
       <div className="App">
         <header className="App-header">
@@ -13,6 +19,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <CheeseList cheeses={cheeses}/>
       </div>
     );
   }
