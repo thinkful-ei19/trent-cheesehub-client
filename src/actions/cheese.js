@@ -24,9 +24,12 @@ export const fetchCheeseError = (error) => {
 }
 
 export const fetchCheeses = () => dispatch => {
-    fetch(`${API_BASE_URL}/api/cheeses`)
-    .then(res => res.json())
-    .then(data => console.log(data))
-    .catch(err => console.log('broken'))
+    return fetch(`${API_BASE_URL}/api/cheeses`)
+    .then(res => {
+        fetchCheeseRequest();
+        return res.json();
+    })
+    .then(data => dispatch(fetchCheeseSuccess(data)))
+    .catch(err => dispatch(fetchCheeseError(err)));
 };
 
