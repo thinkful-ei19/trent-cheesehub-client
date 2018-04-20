@@ -19,7 +19,6 @@ export const cheeseReducer = (state = initialState, action) => {
         }
     }
     else if (action.type === FETCH_CHEESE_SUCCESS ){
-        console.log(action.cheeses);
         return {
             ...state,
             cheeses : action.cheeses,
